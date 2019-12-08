@@ -33,7 +33,6 @@ class ViewController: UIViewController {
             case .failure(let error):
                 print("failure: \(error)")
             case .success(let countries):
-                dump(countries)
                 self.theCountries = countries
             }
         }
@@ -58,8 +57,9 @@ extension ViewController: UITableViewDataSource {
     }
 }
 
+
 extension ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 200
+       return 190
     }
 }

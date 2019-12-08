@@ -16,6 +16,8 @@
 		BE5C981A239AEA35001B84E3 /* CountryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5C9819239AEA35001B84E3 /* CountryCell.swift */; };
 		BE5C981C239AF60C001B84E3 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5C981B239AF60C001B84E3 /* Country.swift */; };
 		BE5C981E239AF64B001B84E3 /* CountryAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5C981D239AF64B001B84E3 /* CountryAPIClient.swift */; };
+		BEC831A7239CB7A7005BF533 /* ImageClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC831A6239CB7A7005BF533 /* ImageClient.swift */; };
+		BEC831A9239CB853005BF533 /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC831A8239CB853005BF533 /* NetworkHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		BE5C9819239AEA35001B84E3 /* CountryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryCell.swift; sourceTree = "<group>"; };
 		BE5C981B239AF60C001B84E3 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		BE5C981D239AF64B001B84E3 /* CountryAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryAPIClient.swift; sourceTree = "<group>"; };
+		BEC831A6239CB7A7005BF533 /* ImageClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageClient.swift; sourceTree = "<group>"; };
+		BEC831A8239CB853005BF533 /* NetworkHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +72,8 @@
 				BE5C980B239AE6FC001B84E3 /* Main.storyboard */,
 				BE5C981D239AF64B001B84E3 /* CountryAPIClient.swift */,
 				BE5C981B239AF60C001B84E3 /* Country.swift */,
+				BEC831A6239CB7A7005BF533 /* ImageClient.swift */,
+				BEC831A8239CB853005BF533 /* NetworkHelper.swift */,
 				BE5C9819239AEA35001B84E3 /* CountryCell.swift */,
 				BE5C980E239AE6FE001B84E3 /* Assets.xcassets */,
 				BE5C9810239AE6FE001B84E3 /* LaunchScreen.storyboard */,
@@ -147,12 +153,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BEC831A9239CB853005BF533 /* NetworkHelper.swift in Sources */,
 				BE5C981A239AEA35001B84E3 /* CountryCell.swift in Sources */,
 				BE5C980A239AE6FC001B84E3 /* ViewController.swift in Sources */,
 				BE5C981E239AF64B001B84E3 /* CountryAPIClient.swift in Sources */,
 				BE5C9806239AE6FC001B84E3 /* AppDelegate.swift in Sources */,
 				BE5C981C239AF60C001B84E3 /* Country.swift in Sources */,
 				BE5C9808239AE6FC001B84E3 /* SceneDelegate.swift in Sources */,
+				BEC831A7239CB7A7005BF533 /* ImageClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -12,6 +12,8 @@ class CountryCell: UITableViewCell {
 
     var someCountries: Country?
     
+
+    
     @IBOutlet weak var countryFlagImage: UIImageView!
     @IBOutlet weak var countryNameLabel: UILabel!
     @IBOutlet weak var countryCapitalLabel: UILabel!
@@ -19,11 +21,20 @@ class CountryCell: UITableViewCell {
     
 
     func configured(for country: Country) {
+        let imageURL = "https://www.countryflags.io/\(country.alpha2Code)/flat/64.png"
         countryNameLabel.text = "Country - \(country.name)"
         countryCapitalLabel.text = "Capital - \(country.capital)"
         countryPopulationLabel.text = "Population - \(country.population.description)"
-        
-       
+        ImageClient.fetchImage(for: imageURL ) { (result) in
+            switch result {
+            case .failure(let error):
+                print("error: \(error)")
+            case .success(let image):
+                DispatchQueue.main.async {
+                    self.countryFlagImage.image = image
+                }
+            }
+        }
         }
     }
     
