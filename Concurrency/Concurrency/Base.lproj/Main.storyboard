@@ -72,6 +72,7 @@
                                             <outlet property="countryFlagImage" destination="lyq-d7-1Xd" id="43g-Df-GEF"/>
                                             <outlet property="countryNameLabel" destination="aiz-BM-TCK" id="zTd-hv-hTc"/>
                                             <outlet property="countryPopulationLabel" destination="yiZ-0v-a1o" id="GzM-lH-bMd"/>
+                                            <segue destination="lMP-Td-GrA" kind="show" id="sn1-hk-8VZ"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -94,6 +95,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1047.8260869565217" y="126.5625"/>
+        </scene>
+        <!--Country Detail-->
+        <scene sceneID="5pU-tK-BLB">
+            <objects>
+                <viewController id="lMP-Td-GrA" customClass="CountryDetail" customModule="Concurrency" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rAB-VO-FHp">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="CP2-rW-RWN"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="lZ0-pE-XSA"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wNV-pe-MWs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1889.8550724637682" y="126.5625"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="PkG-am-k5C">
