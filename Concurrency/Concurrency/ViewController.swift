@@ -37,6 +37,15 @@ class ViewController: UIViewController {
             }
         }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let countryDVC = segue.destination as? CountryDetail,
+            let indexPath = tableView.indexPathForSelectedRow else {
+                fatalError("error")
+        }
+        let someCountry = theCountries[indexPath.row]
+        countryDVC.detailCountry = someCountry
+    }
 
 
 }
