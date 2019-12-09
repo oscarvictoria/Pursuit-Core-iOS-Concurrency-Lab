@@ -14,10 +14,10 @@ class CountryCell: UITableViewCell {
     
 
     
-    @IBOutlet weak var countryFlagImage: UIImageView!
-    @IBOutlet weak var countryNameLabel: UILabel!
-    @IBOutlet weak var countryCapitalLabel: UILabel!
-    @IBOutlet weak var countryPopulationLabel: UILabel!
+@IBOutlet weak var countryFlagImage: UIImageView!
+@IBOutlet weak var countryNameLabel: UILabel!
+@IBOutlet weak var countryCapitalLabel: UILabel!
+@IBOutlet weak var countryPopulationLabel: UILabel!
     
 
     func configured(for country: Country) {
