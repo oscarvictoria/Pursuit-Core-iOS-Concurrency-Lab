@@ -29,9 +29,9 @@ var detailCountry: Country?
             fatalError("error")
         }
         let imageURL = "https://www.countryflags.io/\(theCountries.alpha2Code)/flat/64.png"
-        detailNameLabel.text = theCountries.name
-        detailCapitalLabel.text = theCountries.capital
-        detailPopulationLabel.text = theCountries.population.description
+        detailNameLabel.text = "Country - \(theCountries.name)"
+        detailCapitalLabel.text = "Capital - \(theCountries.capital)"
+        detailPopulationLabel.text = "Population - \(theCountries.population.description)"
         ImageClient.fetchImage(for: imageURL) { [weak self] (result) in
             switch result {
             case .failure(let error):

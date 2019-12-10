@@ -96,6 +96,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Countries" id="PaG-aM-0F5"/>
                     <connections>
+                        <outlet property="searchBar" destination="0lp-Dz-H1Y" id="zvj-Xc-MpO"/>
                         <outlet property="tableView" destination="bbq-XS-jVt" id="hmO-RL-2Ze"/>
                     </connections>
                 </viewController>

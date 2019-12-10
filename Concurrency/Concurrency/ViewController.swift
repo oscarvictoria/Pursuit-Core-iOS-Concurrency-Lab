@@ -9,7 +9,8 @@
 import UIKit
 
 class ViewController: UIViewController {
-    @IBOutlet weak var tableView: UITableView!
+@IBOutlet weak var tableView: UITableView!
+@IBOutlet weak var searchBar: UISearchBar!
     
     var theCountries = [Country]() {
         didSet {
@@ -19,11 +20,25 @@ class ViewController: UIViewController {
             
         }
     }
+    
+    var searchQuery = "" {
+        didSet {
+            CountryAPIClient.getCountries { (result) in
+                    switch result {
+                    case .failure(let error):
+                        print("failure: \(error)")
+                    case .success(let countries):
+                        self.theCountries = countries.filter{$0.name.lowercased().contains(self.searchQuery.lowercased())}
+                    }
+                }
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
+        searchBar.delegate = self
         loadCountries()
     }
     
@@ -47,6 +62,17 @@ class ViewController: UIViewController {
         countryDVC.detailCountry = someCountry
     }
 
+    func filterCountry(for searchText: String) {
+        guard !searchText.isEmpty else { return }
+       CountryAPIClient.getCountries { (result) in
+           switch result {
+           case .failure(let error):
+               print("failure: \(error)")
+           case .success(let countries):
+            self.theCountries = countries.filter{$0.name.lowercased().contains(searchText.lowercased())}
+           }
+       }
+    }
 
 }
 
@@ -70,5 +96,21 @@ extension ViewController: UITableViewDataSource {
 extension ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
        return 190
+    }
+}
+
+extension ViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+        guard let searchText = searchBar.text else { return }
+        filterCountry(for: searchText)
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        guard !searchText.isEmpty else {
+            loadCountries()
+            return
+        }
+        searchQuery = searchText
     }
 }
